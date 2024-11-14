@@ -1,10 +1,1 @@
-{
-  "app": {
-    "[project]/src/app/page": [
-      "static/media/QGYvz_MVcBeNP4NJtEtqUYLknw-s.p.17653016.woff2"
-    ]
-  },
-  "appUsingSizeAdjust": true,
-  "pages": {},
-  "pagesUsingSizeAdjust": false
-}
+{"pages":{},"app":{"/Users/jmstaceydumlao/Desktop/FinanceSmarter_CapstoneProject/app/layout":["static/media/07a54048a9278940-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}

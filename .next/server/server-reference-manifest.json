@@ -1,9 +1,9 @@
 {
   "node": {
-    "7f242e7ea905a8dc9d2da24f9e149b6ff779d9882b": {
+    "7f32d9de15327be2e07494fe6321437be6e4e4ed71": {
       "workers": {
         "app/page": {
-          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227f32d9de15327be2e07494fe6321437be6e4e4ed71%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
@@ -13,5 +13,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "ijTRoe3sF7dtRLFz665tuKyyGEgDAu0j7xeEX4VjlkE="
+  "encryptionKey": "VRgwAKETC/MA7CIPk+5a+N+f7XiPwCt905Je9xDY0Mg="
 }
