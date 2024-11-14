@@ -1,2 +1,4 @@
 # No code to improvenpx some-component-init-command
 node_modules
+.next
+.env
