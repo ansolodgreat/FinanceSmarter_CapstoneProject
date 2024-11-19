@@ -13,7 +13,7 @@ export const Expenses = pgTable('expenses', {
   name: text('name').notNull(),
   amount: numeric('amount').notNull(),
   budgetId: serial('budget_id').references(() => Budgets.id),
-  createdAt: timestamp('created_at').defaultNow(),
+  createdAt: timestamp('createdAt').defaultNow(),
 });
 
 export const Incomes = pgTable('incomes', {

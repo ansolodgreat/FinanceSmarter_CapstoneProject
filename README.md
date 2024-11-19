@@ -6,10 +6,22 @@ If you're getting started and need assistance or face any bugs, join our active 
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
+## <a name="tech-stack">Frontend</a>
+- React.js
 - Next.js
-- TypeScript
-- OpenAI API
+- Prelims
 - Tailwind CSS
+- Preline
+- Tabler Icons
+- Typescript
+- JavaScript
+
+## <a name="tech-stack">Backend</a>
+- Drizzle
+- Neon Console
+- OpenAI API
+- Database
+= API
 
 ## <a name="features">🔋 Features</a>
 

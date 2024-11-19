@@ -7,7 +7,7 @@ import {
 } from "drizzle-orm/pg-core";
 
 
-export const Budgets = pgTable("budgets", {
+export const Budgets = pgTable("Budgets", {
   id: serial("id").primaryKey(),
   name: varchar("name").notNull(),
   amount: numeric("amount").notNull(),
