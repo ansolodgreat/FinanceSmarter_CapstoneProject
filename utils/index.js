@@ -1,20 +1,28 @@
-/**
- * Formats a number into a human-readable string with suffixes (e.g., 1K, 1.5M).
- * @param {number} num - The number to format.
- * @returns {string} - The formatted number as a string.
- */
-
 const formatNumber = (num) => {
-  if (num >= 1e9) {
-    return (num / 1e9).toFixed(1).replace(/\.0$/, "") + "B";
+  // Ensure the input is a valid number by attempting to parse it first
+  if (num === undefined || num === null) {
+    console.error("Received undefined or null value in formatNumber.");
+    return "0"; // Return a fallback value if the input is undefined or null
   }
-  if (num >= 1e6) {
-    return (num / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
+
+  const parsedNum = parseFloat(num);
+  if (isNaN(parsedNum)) {
+    console.error("Invalid number provided to formatNumber:", num);
+    return "0"; // Return a fallback value if the input is invalid
   }
-  if (num >= 1e3) {
-    return (num / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
+
+  // Format the number based on its magnitude
+  if (parsedNum >= 1e9) {
+    return (parsedNum / 1e9).toFixed(2).replace(/\.00$/, "") + "B";
   }
-  return num.toString();
+  if (parsedNum >= 1e6) {
+    return (parsedNum / 1e6).toFixed(2).replace(/\.00$/, "") + "M";
+  }
+  if (parsedNum >= 1e3) {
+    return (parsedNum / 1e3).toFixed(2).replace(/\.00$/, "") + "K";
+  }
+
+  return parsedNum.toFixed(2).replace(/\.00$/, "");
 };
 
 export default formatNumber;

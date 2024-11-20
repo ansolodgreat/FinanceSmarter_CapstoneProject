@@ -1,9 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/(routes)/dashboard/expenses/page": "app/(routes)/dashboard/expenses/page.js",
-  "/(routes)/dashboard/budgets/page": "app/(routes)/dashboard/budgets/page.js",
+  "/page": "app/page.js",
+  "/(routes)/dashboard/page": "app/(routes)/dashboard/page.js",
   "/(routes)/dashboard/incomes/page": "app/(routes)/dashboard/incomes/page.js",
-  "/(routes)/dashboard/upgrade/page": "app/(routes)/dashboard/upgrade/page.js",
   "/(routes)/dashboard/expenses/[id]/page": "app/(routes)/dashboard/expenses/[id]/page.js",
-  "/(routes)/dashboard/page": "app/(routes)/dashboard/page.js"
+  "/(routes)/dashboard/budgets/page": "app/(routes)/dashboard/budgets/page.js"
 }

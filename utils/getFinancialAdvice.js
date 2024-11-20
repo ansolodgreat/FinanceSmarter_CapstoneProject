@@ -1,38 +1,31 @@
-// utils/getFinancialAdvice.js
-import OpenAI from "openai";
+import axios from "axios";
 
-// Initialize the OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true,
-});
-
-
-// Function to generate personalized financial advice
 const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {
-  console.log(totalBudget, totalIncome, totalSpend);
   try {
-    const userPrompt = `
-      Based on the following financial data:
-      - Total Budget: ${totalBudget} USD 
-      - Expenses: ${totalSpend} USD 
-      - Incomes: ${totalIncome} USD
-      Provide detailed financial advice in 2 sentence to help the user manage their finances more effectively.
-    `;
-
-    // Send the prompt to the OpenAI API
-    const chatCompletion = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [{ role: "user", content: userPrompt }],
+    const response = await axios.post("/api/financial-advice", {
+      budget: totalBudget,
+      income: totalIncome,
+      spend: totalSpend,
     });
 
-    // Process and return the response
-    const advice = chatCompletion.choices[0].message.content;
-
-    console.log(advice);
-    return advice;
+    if (response.status === 200 && response.data.advice) {
+      return response.data.advice; // Return the financial advice from the response
+    } else {
+      console.warn("Unexpected response format:", response);
+      return "Unable to fetch meaningful financial advice at this moment.";
+    }
   } catch (error) {
     console.error("Error fetching financial advice:", error);
+
+    // Additional debugging information
+    if (error.response) {
+      console.error("Server responded with:", error.response.status, error.response.data);
+    } else if (error.request) {
+      console.error("No response received:", error.request);
+    } else {
+      console.error("Request setup error:", error.message);
+    }
+
     return "Sorry, I couldn't fetch the financial advice at this moment. Please try again later.";
   }
 };

@@ -6,6 +6,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
     "/(routes)/dashboard/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -21,21 +26,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(routes)/dashboard/page.js"
     ],
-    "/(routes)/dashboard/budgets/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(routes)/dashboard/budgets/page.js"
-    ],
-    "/(routes)/dashboard/expenses/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(routes)/dashboard/expenses/page.js"
-    ],
-    "/(routes)/dashboard/incomes/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(routes)/dashboard/incomes/page.js"
-    ],
     "/(routes)/dashboard/expenses/[id]/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -46,20 +36,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(routes)/dashboard/expenses/[id]/page.js"
     ],
-    "/page": [
+    "/(routes)/dashboard/budgets/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/(routes)/dashboard/budgets/page.js"
     ],
-    "/(auth)/sign-in/[[...sign-in]]/page": [
+    "/(routes)/dashboard/incomes/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/sign-in/[[...sign-in]]/page.js"
-    ],
-    "/(routes)/dashboard/upgrade/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(routes)/dashboard/upgrade/page.js"
+      "static/chunks/app/(routes)/dashboard/incomes/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
