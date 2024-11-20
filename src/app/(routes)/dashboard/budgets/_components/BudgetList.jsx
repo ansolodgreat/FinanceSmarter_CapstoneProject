@@ -30,6 +30,8 @@ function BudgetList() {
     .orderBy(desc(Budgets.id))
     ;
 
+    //result.amount = parseInt(result.amount).toFixed(2)
+    console.log(result,"gettingTheBudget")
     setBudgetList(result);
 
   }

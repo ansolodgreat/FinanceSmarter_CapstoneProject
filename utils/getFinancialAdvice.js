@@ -1,8 +1,15 @@
 import axios from "axios";
 
 const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {
+  // Input validation
+  if (isNaN(totalBudget) || isNaN(totalIncome) || isNaN(totalSpend)) {
+    console.error("Invalid input values for financial advice:", { totalBudget, totalIncome, totalSpend });
+    return "Invalid input data. Please check your budget, income, and spend values.";
+  }
+
   try {
-    const response = await axios.post("/api/financial-advice", {
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL || ""; // Adjust URL based on environment
+    const response = await axios.post(`${BASE_URL}/api/financial-advice`, {
       budget: totalBudget,
       income: totalIncome,
       spend: totalSpend,
@@ -17,7 +24,7 @@ const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {
   } catch (error) {
     console.error("Error fetching financial advice:", error);
 
-    // Additional debugging information
+    // Debugging information for errors
     if (error.response) {
       console.error("Server responded with:", error.response.status, error.response.data);
     } else if (error.request) {
