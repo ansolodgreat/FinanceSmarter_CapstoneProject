@@ -5,7 +5,7 @@ import { Budgets, Expenses } from '@/utils/schema';
 import { desc, eq } from 'drizzle-orm';
 import React, { useEffect, useState } from 'react'
 import ExpenseListTable from '../_components/ExpenseListTable.jsx';
-import { useUser } from '@clerk/nextjs';
+import { useUser } from '@clerk/nextjs'; // Import your ExpensesScreen component or create it here
 
 function ExpensesScreen() {
 
@@ -42,4 +42,4 @@ function ExpensesScreen() {
   )
 }
 
-export default ExpensesScreen
+export default ExpensesScreen;

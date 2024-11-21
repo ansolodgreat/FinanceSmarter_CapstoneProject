@@ -21,6 +21,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(routes)/dashboard/page.js"
     ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
     "/(routes)/dashboard/budgets/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -36,10 +41,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(routes)/dashboard/expenses/[id]/page.js"
     ],
-    "/page": [
+    "/(routes)/dashboard/incomes/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/(routes)/dashboard/incomes/page.js"
     ]
   }
 }

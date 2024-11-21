@@ -70,7 +70,7 @@ function CardInfo({ budgetList, incomeList }) {
             <div className="p-7 border rounded-2xl flex items-center justify-between">
               <div>
                 <h2 className="text-sm">Total Spend</h2>
-                <h2 className="font-bold text-2xl">${formatNumber(totals.totalpend)}</h2>
+                <h2 className="font-bold text-2xl">${formatNumber(totals.totalSpend)}</h2>
               </div>
               <ReceiptText className="bg-red-800 p-3 h-12 w-12 rounded-full text-white" aria-hidden="true" />
             </div>
