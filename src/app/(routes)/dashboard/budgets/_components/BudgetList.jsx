@@ -20,7 +20,7 @@ function BudgetList() {
    */
   const getBudgetList=async()=>{
 
-    const result=await db.select({
+   let result=await db.select({
       ...getTableColumns(Budgets),
       totalSpend:sql `sum(${Expenses.amount})`.mapWith(Number),
       totalItem: sql `count(${Expenses.id})`.mapWith(Number)
@@ -31,6 +31,10 @@ function BudgetList() {
     .orderBy(desc(Budgets.id))
     ;
 
+    result = result.map(budget => ({
+      ...budget, // Spread the existing properties
+      amount: Number(budget.amount) // Convert the amount to a number
+      }));
     //result.amount = parseInt(result.amount).toFixed(2)
     console.log(result,"gettingTheBudget")
     setBudgetList(result);

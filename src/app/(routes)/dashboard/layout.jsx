@@ -34,12 +34,16 @@ function DashboardLayout({ children }) {
 
     try {
       // Fetch budgets for the user
-      const result = await db
+      let result = await db
         .select()
         .from(Budgets)
         .where(eq(Budgets.createdBy, userEmail));  // Use email in query
 
-      console.log("Budgets:", result);
+        result = result.map(budget => ({
+          ...budget, // Spread the existing properties
+          amount: Number(budget.amount) // Convert the amount to a number
+          }));
+        console.log("Budgets:", result);
 
       // If no budgets found, redirect to create new budgets page
       if (result?.length === 0) {

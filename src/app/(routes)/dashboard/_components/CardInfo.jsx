@@ -11,7 +11,7 @@ function CardInfo({ budgetList, incomeList }) {
   const totals = useMemo(() => {
     let totalBudget = 0, totalSpend = 0, totalIncome = 0;
     budgetList.forEach(({ amount, totalSpend: spend }) => {
-      totalBudget += amount;
+      totalBudget += +amount;
       totalSpend += spend;
     });
     incomeList.forEach(({ totalAmount }) => {
