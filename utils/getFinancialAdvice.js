@@ -7,6 +7,7 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
+// Function to fetch user-specific data (mocked for this example)
 
 // Function to generate personalized financial advice
 const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {

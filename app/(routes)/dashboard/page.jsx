@@ -1,67 +1,67 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import { UserButton, useUser } from "@clerk/nextjs";
 import CardInfo from "./_components/CardInfo";
 import { db } from "@/utils/dbConfig";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
-import { Budgets, Expenses, Incomes } from "../../../../utils/schema";
+import { Budgets, Expenses, Incomes } from "@/utils/schema.jsx";
 import BarChartDashboard from "./_components/BarChartDashboard";
 import BudgetItem from "./budgets/_components/BudgetItem";
 import ExpenseListTable from "./expenses/_components/ExpenseListTable";
-
-export default function Dashboard() {
+function Dashboard() {
   const { user } = useUser();
+
   const [budgetList, setBudgetList] = useState([]);
   const [incomeList, setIncomeList] = useState([]);
   const [expensesList, setExpensesList] = useState([]);
-
   useEffect(() => {
-    if (user) {
-      console.log("User is logged in:", user);
-      getBudgetList();
-    }
+    user && getBudgetList();
   }, [user]);
-
-  // To get the Budget List
+  /**
+   * used to get budget List
+   */
   const getBudgetList = async () => {
     const result = await db
       .select({
         ...getTableColumns(Budgets),
-        totalSpend: sql`SUM(${Expenses.amount})`.mapWith(Number),
-        totalItem: sql`COUNT(${Expenses.id})`.mapWith(Number),
+
+        totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
+        totalItem: sql`count(${Expenses.id})`.mapWith(Number),
       })
       .from(Budgets)
       .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
       .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
       .groupBy(Budgets.id)
       .orderBy(desc(Budgets.id));
-    
-    console.log("Fetched Budget List:", result);
     setBudgetList(result);
     getAllExpenses();
     getIncomeList();
   };
 
-  // To get the Income List
+  /**
+   * Get Income stream list
+   */
   const getIncomeList = async () => {
     try {
       const result = await db
         .select({
           ...getTableColumns(Incomes),
-          totalAmount: sql`SUM(CAST(${Incomes.amount} AS NUMERIC))`.mapWith(Number),
+          totalAmount: sql`SUM(CAST(${Incomes.amount} AS NUMERIC))`.mapWith(
+            Number
+          ),
         })
         .from(Incomes)
-        .groupBy(Incomes.id);
+        .groupBy(Incomes.id); // Assuming you want to group by ID or any other relevant column
 
-      console.log("Fetched Income List:", result);  
       setIncomeList(result);
     } catch (error) {
       console.error("Error fetching income list:", error);
     }
   };
 
-  // To get all the Expenses of the user
+  /**
+   * Used to get All expenses belong to users
+   */
   const getAllExpenses = async () => {
     const result = await db
       .select({
@@ -72,17 +72,16 @@ export default function Dashboard() {
       })
       .from(Budgets)
       .rightJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
-      .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
+      .where(eq(Budgets.createdBy, user?.primaryEmailAddress.emailAddress))
       .orderBy(desc(Expenses.id));
-    console.log("Fetched Expenses List:", result);  
     setExpensesList(result);
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8 bg-">
       <h2 className="font-bold text-4xl">Hi, {user?.fullName} 👋</h2>
       <p className="text-gray-500">
-        Let’s manage your expenses and track your spending.
+        Here's what happenning with your money, Lets Manage your expense
       </p>
 
       <CardInfo budgetList={budgetList} incomeList={incomeList} />
@@ -95,21 +94,23 @@ export default function Dashboard() {
             refreshData={() => getBudgetList()}
           />
         </div>
-
         <div className="grid gap-5">
-          <h2 className="font-bold text-lg">Latest Budgets</h2>
-          {budgetList?.length > 0
-            ? budgetList.map((budget) => (
-                <BudgetItem budget={budget} key={budget.id} />
-              ))
-            : [1, 2, 3, 4].map((item) => (
-                <div
-                  key={`skeleton-${item}`}
-                  className="h-[180px] w-full bg-slate-200 rounded-lg animate-pulse"
-                ></div>
-              ))}
+            <h2 className="font-bold text-lg">Latest Budgets</h2>
+            {budgetList?.length > 0
+              ? budgetList.map((budget) => (
+                  <BudgetItem budget={budget} key={budget.id} /> // Assuming 'id' is a unique identifier
+                ))
+              : [1, 2, 3, 4].map((item, index) => (
+                  <div
+                    className="h-[180xp] w-full bg-slate-200 rounded-lg animate-pulse"
+                    key={index} // Use index here since this is a static placeholder
+                  ></div>
+                ))}
+
         </div>
       </div>
     </div>
   );
 }
+
+export default Dashboard;
