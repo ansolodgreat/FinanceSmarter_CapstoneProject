@@ -1,4 +1,5 @@
 "use client";
+
 import { db } from '@/utils/dbConfig';
 import { Budgets, Expenses } from '@/utils/schema';
 import { desc, eq } from 'drizzle-orm';
@@ -42,7 +43,7 @@ function ExpensesScreen() {
       <h2 className='font-bold text-3xl'>My Expenses</h2>
       <ExpenseListTable 
         refreshData={getAllExpenses} 
-        expensesList={expensesList} 
+        expensesList={xpensesList} 
       />
     </div>
   );

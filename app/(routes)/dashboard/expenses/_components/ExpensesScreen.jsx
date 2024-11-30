@@ -1,51 +1,60 @@
-"use client";
-import { db } from '@/utils/dbConfig';
-import { Budgets, Expenses } from '@/utils/schema';
-import { desc, eq } from 'drizzle-orm';
-import React, { useEffect, useState } from 'react';
-import ExpenseListTable from './_components/ExpenseListTable';
-import { useUser  } from '@clerk/nextjs';
+"use client"; // Marking this file as a client component
 
-function ExpensesScreen() {
+import React, { useEffect, useState } from "react";
+import { use } from "react"; // Import use from React
+import { useUser  } from 'path/to/useUser '; // Ensure this path is correct
+import { useRouter } from 'next/router'; // Import useRouter from Next.js
+
+function ExpensesScreen({ params }) {
+  const { user } = useUser (); // Now this should be defined
+  const [budgetInfo, setBudgetInfo] = useState();
   const [expensesList, setExpensesList] = useState([]);
-  const { user } = useUser ();
+  const route = useRouter();
+  
+  // Unwrap params
+  const { id } = use(params); // Unwrap params here
 
   useEffect(() => {
     if (user) {
-      getAllExpenses();
+      getBudgetInfo(); // Ensure this function is defined
     }
   }, [user]);
 
-  const getAllExpenses = async () => {
-    if (!user) {
-      console.warn("User  is not defined. Cannot fetch expenses.");
-      return;
-    }
-
-    try {
-      const result = await db
-        .select({
-          id: Expenses.id,
-          name: Expenses.name,
-          amount: Expenses.amount,
-          createdAt: Expenses.createdAt,
-        })
-        .from(Budgets)
-        .rightJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
-        .where(eq(Budgets.createdBy, user.primaryEmailAddress.emailAddress))
-        .orderBy(desc(Expenses.id));
-
-      console.log("Fetched expenses:", result);
-      setExpensesList(result);
-    } catch (error) {
-      console.error("Error fetching expenses:", error);
-    }
-  };
+  // ... other functions
 
   return (
-    <div className='p-10'>
-      <h2 className='font-bold text-3xl'>My Expenses</h2>
-      <ExpenseListTable expensesList={expensesList} />
+    <div className="p-10">
+      <h2 className="text-2xl font-bold gap-2 flex justify-between items-center">
+        <span className="flex gap-2 items-center">
+          <ArrowLeft onClick={() => route.back()} className="cursor-pointer" />
+          My Expenses
+        </span>
+        <div className="flex gap-2 items-center">
+          <EditBudget
+            budgetInfo={budgetInfo}
+            refreshData={() => getBudgetInfo()}
+          />
+          {/* Alert Dialog Code */}
+        </div>
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-5">
+        {budgetInfo ? (
+          <BudgetItem budget={budgetInfo} />
+        ) : (
+          <div className="h-[150px] w-full bg-slate-200 rounded-lg animate-pulse"></div>
+        )}
+        <AddExpense
+          budgetId={id} // Use the unwrapped id here
+          user={user}
+          refreshData={() => getBudgetInfo()}
+        />
+      </div>
+      <div className="mt-4">
+        <ExpenseListTable
+          expensesList={expensesList}
+          refreshData={() => getBudgetInfo()}
+        />
+      </div>
     </div>
   );
 }
