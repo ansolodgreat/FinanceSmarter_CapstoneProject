@@ -1,52 +1,37 @@
 {
   "node": {
-    "7fd1809d3027132acaecc6b5633f7ff2434154d787": {
+    "7f635ff3a7e681b758f7c5999e4b39e681b5ee685e": {
       "workers": {
         "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd1809d3027132acaecc6b5633f7ff2434154d787%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/(routes)/dashboard/incomes/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd1809d3027132acaecc6b5633f7ff2434154d787%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/_not-found/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd1809d3027132acaecc6b5633f7ff2434154d787%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227f635ff3a7e681b758f7c5999e4b39e681b5ee685e%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(auth)/sign-in/[[...sign-in]]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd1809d3027132acaecc6b5633f7ff2434154d787%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227f635ff3a7e681b758f7c5999e4b39e681b5ee685e%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(routes)/dashboard/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd1809d3027132acaecc6b5633f7ff2434154d787%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/(routes)/dashboard/budgets/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd1809d3027132acaecc6b5633f7ff2434154d787%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227f635ff3a7e681b758f7c5999e4b39e681b5ee685e%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(routes)/dashboard/expenses/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd1809d3027132acaecc6b5633f7ff2434154d787%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227f635ff3a7e681b758f7c5999e4b39e681b5ee685e%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(routes)/dashboard/expenses/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd1809d3027132acaecc6b5633f7ff2434154d787%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227f635ff3a7e681b758f7c5999e4b39e681b5ee685e%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
         "app/page": "action-browser",
-        "app/(routes)/dashboard/incomes/page": "action-browser",
-        "app/_not-found/page": "action-browser",
         "app/(auth)/sign-in/[[...sign-in]]/page": "action-browser",
         "app/(routes)/dashboard/page": "action-browser",
-        "app/(routes)/dashboard/budgets/page": "action-browser",
         "app/(routes)/dashboard/expenses/page": "action-browser",
         "app/(routes)/dashboard/expenses/[id]/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "mJfhhAJQ/wrmcdNI863q9mKhl9is721Ts1/g0SRdEN4="
+  "encryptionKey": "uMNtpFtc5dmPnfraUi12s8HIaD/HLMrr6vfKwhZfsE0="
 }

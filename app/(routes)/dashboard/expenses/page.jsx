@@ -43,7 +43,7 @@ function ExpensesScreen() {
       <h2 className='font-bold text-3xl'>My Expenses</h2>
       <ExpenseListTable 
         refreshData={getAllExpenses} 
-        expensesList={xpensesList} 
+        expensesList={ExpensesList} 
       />
     </div>
   );

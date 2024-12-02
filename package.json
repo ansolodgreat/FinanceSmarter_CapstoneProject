@@ -14,7 +14,7 @@
     "db:migrate": "tsx scripts/migrate.ts"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.5.1",
+    "@clerk/nextjs": "^6.5.2",
     "@neondatabase/serverless": "^0.10.4",
     "@prisma/client": "^5.22.0",
     "@radix-ui/react-alert-dialog": "^1.0.5",
