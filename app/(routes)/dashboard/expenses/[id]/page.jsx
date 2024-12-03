@@ -3,7 +3,7 @@ import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import BudgetItem from "../../budgets/_components/BudgetItem";
 import AddExpense from "../_components/AddExpense";
 import ExpenseListTable from "../_components/ExpenseListTable";
@@ -24,11 +24,14 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import EditBudget from "../_components/EditBudget";
 
-function ExpensesScreen({ params }) {
+
+async function ExpensesScreen({ params }) {
   const { user } = useUser();
   const [budgetInfo, setbudgetInfo] = useState();
   const [expensesList, setExpensesList] = useState([]);
   const route = useRouter();
+  const { id } = await React.use(params)
+
   useEffect(() => {
     user && getBudgetInfo();
   }, [user]);
@@ -46,7 +49,7 @@ function ExpensesScreen({ params }) {
       .from(Budgets)
       .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
       .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
-      .where(eq(Budgets.id, params.id))
+      .where(eq(Budgets.id, id))
       .groupBy(Budgets.id);
 
     setbudgetInfo(result[0]);
@@ -60,7 +63,7 @@ function ExpensesScreen({ params }) {
     const result = await db
       .select()
       .from(Expenses)
-      .where(eq(Expenses.budgetId, params.id))
+      .where(eq(Expenses.budgetId, id))
       .orderBy(desc(Expenses.id));
     setExpensesList(result);
     console.log(result);
@@ -72,13 +75,13 @@ function ExpensesScreen({ params }) {
   const deleteBudget = async () => {
     const deleteExpenseResult = await db
       .delete(Expenses)
-      .where(eq(Expenses.budgetId, params.id))
+      .where(eq(Expenses.budgetId, id))
       .returning();
 
     if (deleteExpenseResult) {
       const result = await db
         .delete(Budgets)
-        .where(eq(Budgets.id, params.id))
+        .where(eq(Budgets.id, id))
         .returning();
     }
     toast("Budget Deleted !");
@@ -150,5 +153,20 @@ function ExpensesScreen({ params }) {
     </div>
   );
 }
+class ErrorBoundary extends React.Component { 
+  constructor(props) { super(props); this.state = { hasError: false }; } 
+  static getDerivedStateFromError(error) { return { hasError: true }; } 
+  componentDidCatch(error, errorInfo) { console.error("Error Boundary Caught:", error, errorInfo); } 
+  render() { if (this.state.hasError) { return <h1>Something went wrong.</h1>; } 
+  return this.props.children; } } 
 
-export default ExpensesScreen;
+export default function ExpenseScreenWrapper(props) {
+  return (
+  <ErrorBoundary>
+  <Suspense fallback={<div>Loading...</div>}>
+  <ExpensesScreen {...props} />
+  </Suspense>
+  </ErrorBoundary>
+  );
+  }
+//export default ExpensesScreen;
