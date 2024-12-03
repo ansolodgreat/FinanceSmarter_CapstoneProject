@@ -1,7 +1,8 @@
 {
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/(auth)/sign-in/[[...sign-in]]/page": "app/(auth)/sign-in/[[...sign-in]]/page.js",
-  "/(routes)/dashboard/expenses/page": "app/(routes)/dashboard/expenses/page.js",
   "/(routes)/dashboard/page": "app/(routes)/dashboard/page.js",
-  "/(routes)/dashboard/incomes/page": "app/(routes)/dashboard/incomes/page.js"
+  "/(routes)/dashboard/expenses/[id]/page": "app/(routes)/dashboard/expenses/[id]/page.js",
+  "/(routes)/dashboard/budgets/page": "app/(routes)/dashboard/budgets/page.js"
 }
