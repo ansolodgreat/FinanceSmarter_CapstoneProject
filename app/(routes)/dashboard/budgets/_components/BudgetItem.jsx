@@ -23,7 +23,7 @@ function BudgetItem({ budget }) {
             </h2>
             <div>
               <h2 className="font-bold">{budget.name}</h2>
-              <h2 className="text-sm text-gray-500">{parseInt(budget.totalItem).toFixed(2)} Item</h2>
+              <h2 className="text-sm text-gray-500">{budget.totalItem} Item</h2>
             </div>
           </div>
           <h2 className="font-bold text-primary text-lg"> ${parseInt(budget.amount).toFixed(2)}</h2>

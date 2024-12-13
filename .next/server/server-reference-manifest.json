@@ -1,37 +1,41 @@
 {
   "node": {
-    "7fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6": {
+    "7f2dabd0ad812a86672d68d5185d69acd7b0a328f7": {
       "workers": {
         "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(auth)/sign-in/[[...sign-in]]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(routes)/dashboard/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(routes)/dashboard/expenses/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/(routes)/dashboard/budgets/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(routes)/dashboard/incomes/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/budgets/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/(routes)/dashboard/expenses/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/_not-found/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fc255f4ae4bb0ed6493a89e503b4f99ff81e804e6%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/upgrade/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
@@ -40,13 +44,116 @@
         "app/(auth)/sign-in/[[...sign-in]]/page": "action-browser",
         "app/(routes)/dashboard/page": "action-browser",
         "app/(routes)/dashboard/expenses/[id]/page": "action-browser",
-        "app/(routes)/dashboard/budgets/page": "action-browser",
         "app/(routes)/dashboard/incomes/page": "action-browser",
+        "app/(routes)/dashboard/budgets/page": "action-browser",
         "app/(routes)/dashboard/expenses/page": "action-browser",
-        "app/_not-found/page": "action-browser"
+        "app/_not-found/page": "action-browser",
+        "app/(routes)/dashboard/upgrade/page": "action-browser"
+      }
+    },
+    "7f3935d4ceb635d840dba7da9ccbd5566715e3bd17": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(auth)/sign-in/[[...sign-in]]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/expenses/[id]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/incomes/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/budgets/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/expenses/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/_not-found/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/upgrade/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/(auth)/sign-in/[[...sign-in]]/page": "action-browser",
+        "app/(routes)/dashboard/page": "action-browser",
+        "app/(routes)/dashboard/expenses/[id]/page": "action-browser",
+        "app/(routes)/dashboard/incomes/page": "action-browser",
+        "app/(routes)/dashboard/budgets/page": "action-browser",
+        "app/(routes)/dashboard/expenses/page": "action-browser",
+        "app/_not-found/page": "action-browser",
+        "app/(routes)/dashboard/upgrade/page": "action-browser"
+      }
+    },
+    "7fd47e922e49d077ab4407f80abb06c167c4626715": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(auth)/sign-in/[[...sign-in]]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/expenses/[id]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/incomes/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/budgets/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/expenses/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/_not-found/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/(routes)/dashboard/upgrade/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f2dabd0ad812a86672d68d5185d69acd7b0a328f7%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f3935d4ceb635d840dba7da9ccbd5566715e3bd17%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%2C%5B%22%2FUsers%2Fjmstaceydumlao%2FDesktop%2FFinanceSmarter_CapstoneProject%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227fd47e922e49d077ab4407f80abb06c167c4626715%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/(auth)/sign-in/[[...sign-in]]/page": "action-browser",
+        "app/(routes)/dashboard/page": "action-browser",
+        "app/(routes)/dashboard/expenses/[id]/page": "action-browser",
+        "app/(routes)/dashboard/incomes/page": "action-browser",
+        "app/(routes)/dashboard/budgets/page": "action-browser",
+        "app/(routes)/dashboard/expenses/page": "action-browser",
+        "app/_not-found/page": "action-browser",
+        "app/(routes)/dashboard/upgrade/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "/6nFqC475gsJzS6TghQLyF7FxndClfv1bxAYFxbDEp0="
+  "encryptionKey": "SDqMjny5/utLkJ2PO5xUat00QVBec4wfipJqIW13CGc="
 }

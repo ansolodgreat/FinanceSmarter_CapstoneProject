@@ -1,27 +1,28 @@
-import { pgTable, serial, varchar, decimal, timestamp, integer, text } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, timestamp, numeric, varchar} from 'drizzle-orm/pg-core';
 
-export const Incomes = pgTable('Incomes', {
+export const Budgets = pgTable('Budgets', {
   id: serial('id').primaryKey(),
-  name: varchar('name', { length: 256 }).notNull(),
-  amount: decimal('amount', { precision: 10, scale: 2 }).notNull(),
-  created_at: timestamp('created_at').defaultNow(),
-  createdBy: text('created_by').notNull(),
+  name: text('name').notNull(),
+  amount: numeric('amount').notNull(),
+  icon: varchar("icon"),
+  createdBy: text('createdBy').notNull(),
+  createdAt: timestamp('createdAt').defaultNow(),
 });
 
 export const Expenses = pgTable('Expenses', {
   id: serial('id').primaryKey(),
-  amount: decimal('amount', { precision: 10, scale: 2 }).notNull(),
-  income_id: integer('income_id').references(() => Incomes.id),
-  created_at: timestamp('created_at').defaultNow(),
-  createdBy: text('created_by').notNull(),
+  name: text('name').notNull(),
+  amount: numeric('amount').notNull(),
+  icon: varchar("icon"),
+  budgetId: serial('budgetId').references(() => Budgets.id),
+  createdAt: timestamp('createdAt').defaultNow(),
 });
 
-export const Budgets = pgTable('Budgets', {
+export const Incomes = pgTable('Incomes', {
   id: serial('id').primaryKey(),
-  name: varchar('name', { length: 256 }).notNull(),
-  amount: decimal('amount', { precision: 10, scale: 2 }).notNull(),
-  created_at: timestamp('created_at').defaultNow(),
-  createdBy: text('created_by').notNull(),
-  category: varchar('category', { length: 256 }),
-  period: varchar('period', { length: 50 }),
-});
+  name: text('name').notNull(),
+  amount: numeric("amount").notNull().default(0),
+  icon: varchar("icon"),
+  createdBy: text('createdBy').notNull(),
+  createdAt: timestamp('createdAt').defaultNow(),
+}); 

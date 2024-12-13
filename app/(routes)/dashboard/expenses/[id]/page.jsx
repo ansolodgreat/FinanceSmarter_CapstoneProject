@@ -1,14 +1,15 @@
 "use client";
+
 import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import BudgetItem from "../../budgets/_components/BudgetItem";
 import AddExpense from "../_components/AddExpense";
 import ExpenseListTable from "../_components/ExpenseListTable";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Pen, PenBox, Trash } from "lucide-react";
+import { ArrowLeft, Trash } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -23,69 +24,78 @@ import {
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import EditBudget from "../_components/EditBudget";
+import { use } from "react";  // Importing use from React
 
-
-async function ExpensesScreen({ params }) {
+function ExpensesScreen({ params }) {
   const { user } = useUser();
-  const [budgetInfo, setbudgetInfo] = useState();
+  const [budgetInfo, setBudgetInfo] = useState();
   const [expensesList, setExpensesList] = useState([]);
   const route = useRouter();
-  const { id } = await React.use(params)
+  
+  // Unwrap params using use
+  const unwrappedParams = use(params);
+  const budgetId = unwrappedParams?.id; // Safe access after unwrapping
 
   useEffect(() => {
-    user && getBudgetInfo();
-  }, [user]);
+    if (user && budgetId) {
+      getBudgetInfo();
+    }
+  }, [user, budgetId]);
 
   /**
-   * Get Budget Information
+   * Fetches budget information and related expenses.
    */
   const getBudgetInfo = async () => {
-    const result = await db
-      .select({
-        ...getTableColumns(Budgets),
-        totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
-        totalItem: sql`count(${Expenses.id})`.mapWith(Number),
-      })
-      .from(Budgets)
-      .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
-      .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
-      .where(eq(Budgets.id, id))
-      .groupBy(Budgets.id);
+    try {
+      const result = await db
+        .select({
+          ...getTableColumns(Budgets),
+          totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
+          totalItem: sql`count(${Expenses.id})`.mapWith(Number),
+        })
+        .from(Budgets)
+        .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
+        .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
+        .where(eq(Budgets.id, budgetId)) // Use unwrapped budgetId
+        .groupBy(Budgets.id);
 
-    setbudgetInfo(result[0]);
-    getExpensesList();
+      setBudgetInfo(result[0]);
+      getExpensesList();
+    } catch (error) {
+      console.error("Error fetching budget info:", error);
+    }
   };
 
   /**
-   * Get Latest Expenses
+   * Fetches all expenses belonging to the logged-in user.
    */
   const getExpensesList = async () => {
-    const result = await db
-      .select()
-      .from(Expenses)
-      .where(eq(Expenses.budgetId, id))
-      .orderBy(desc(Expenses.id));
-    setExpensesList(result);
-    console.log(result);
+    try {
+      const result = await db
+        .select()
+        .from(Expenses)
+        .where(eq(Expenses.budgetId, budgetId)) // Use unwrapped budgetId
+        .orderBy(desc(Expenses.id));
+      setExpensesList(result);
+      console.log(result);
+    } catch (error) {
+      console.error("Error fetching expenses:", error);
+    }
   };
 
   /**
-   * Used to Delete budget
+   * Deletes the current budget and its associated expenses.
    */
   const deleteBudget = async () => {
-    const deleteExpenseResult = await db
-      .delete(Expenses)
-      .where(eq(Expenses.budgetId, id))
-      .returning();
+    try {
+      await db.delete(Expenses).where(eq(Expenses.budgetId, budgetId)); // Use unwrapped budgetId
+      await db.delete(Budgets).where(eq(Budgets.id, budgetId)); // Use unwrapped budgetId
 
-    if (deleteExpenseResult) {
-      const result = await db
-        .delete(Budgets)
-        .where(eq(Budgets.id, id))
-        .returning();
+      toast("Budget Deleted!");
+      route.replace("/dashboard/budgets");
+    } catch (error) {
+      console.error("Error deleting budget:", error);
     }
-    toast("Budget Deleted !");
-    route.replace("/dashboard/budgets");
   };
 
   return (
@@ -96,10 +106,12 @@ async function ExpensesScreen({ params }) {
           My Expenses
         </span>
         <div className="flex gap-2 items-center">
-          <EditBudget
-            budgetInfo={budgetInfo}
-            refreshData={() => getBudgetInfo()}
-          />
+          {budgetInfo && (
+            <EditBudget
+              budgetInfo={budgetInfo}
+              refreshData={() => getBudgetInfo()}
+            />
+          )}
 
           <AlertDialog>
             <AlertDialogTrigger asChild>
@@ -126,24 +138,20 @@ async function ExpensesScreen({ params }) {
           </AlertDialog>
         </div>
       </h2>
-      <div
-        className="grid grid-cols-1 
-        md:grid-cols-2 mt-6 gap-5"
-      >
+
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-5">
         {budgetInfo ? (
           <BudgetItem budget={budgetInfo} />
         ) : (
-          <div
-            className="h-[150px] w-full bg-slate-200 
-            rounded-lg animate-pulse"
-          ></div>
+          <div className="h-[150px] w-full bg-slate-200 rounded-lg animate-pulse"></div>
         )}
         <AddExpense
-          budgetId={params.id}
+          budgetId={budgetId}  // Use unwrapped budgetId here
           user={user}
           refreshData={() => getBudgetInfo()}
         />
       </div>
+
       <div className="mt-4">
         <ExpenseListTable
           expensesList={expensesList}
@@ -153,20 +161,5 @@ async function ExpensesScreen({ params }) {
     </div>
   );
 }
-class ErrorBoundary extends React.Component { 
-  constructor(props) { super(props); this.state = { hasError: false }; } 
-  static getDerivedStateFromError(error) { return { hasError: true }; } 
-  componentDidCatch(error, errorInfo) { console.error("Error Boundary Caught:", error, errorInfo); } 
-  render() { if (this.state.hasError) { return <h1>Something went wrong.</h1>; } 
-  return this.props.children; } } 
 
-export default function ExpenseScreenWrapper(props) {
-  return (
-  <ErrorBoundary>
-  <Suspense fallback={<div>Loading...</div>}>
-  <ExpensesScreen {...props} />
-  </Suspense>
-  </ErrorBoundary>
-  );
-  }
-//export default ExpensesScreen;
+export default ExpensesScreen;

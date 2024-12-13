@@ -3,38 +3,44 @@ import { Input } from "@/components/ui/input";
 import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
 import { Loader } from "lucide-react";
-import moment from "moment";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
 function AddExpense({ budgetId, user, refreshData }) {
-  const [name, setName] = useState();
-  const [amount, setAmount] = useState();
+  const [name, setName] = useState(""); // Initialize as an empty string
+  const [amount, setAmount] = useState(""); // Initialize as an empty string
   const [loading, setLoading] = useState(false);
+
   /**
    * Used to Add New Expense
    */
   const addNewExpense = async () => {
     setLoading(true);
-    const result = await db
-      .insert(Expenses)
-      .values({
-        name: name,
-        amount: amount,
-        budgetId: budgetId,
-        createdAt: moment().format("DD/MM/yyy"),
-      })
-      .returning({ insertedId: Budgets.id });
+    try {
+      const result = await db
+        .insert(Expenses)
+        .values({
+          name: name,
+          amount: parseFloat(amount), // Ensure the amount is treated as a number
+          budgetId: budgetId,
+          createdAt: new Date(), // Use a JavaScript Date object
+        })
+        .returning({ insertedId: Budgets.id });
 
-    setAmount("");
-    setName("");
-    if (result) {
+      setAmount(""); // Reset the input field
+      setName(""); // Reset the input field
+      if (result) {
+        refreshData();
+        toast("New Expense Added!");
+      }
+    } catch (error) {
+      console.error("Error adding expense:", error);
+      toast.error("Failed to add expense. Please try again.");
+    } finally {
       setLoading(false);
-      refreshData();
-      toast("New Expense Added!");
     }
-    setLoading(false);
   };
+
   return (
     <div className="border p-5 rounded-2xl">
       <h2 className="font-bold text-lg">Add Expense</h2>
@@ -55,8 +61,8 @@ function AddExpense({ budgetId, user, refreshData }) {
         />
       </div>
       <Button
-        disabled={!(name && amount) || loading}
-        onClick={() => addNewExpense()}
+        disabled={!(name && amount) || loading} // Disable button if inputs are empty or loading
+        onClick={addNewExpense}
         className="mt-3 w-full rounded-full"
       >
         {loading ? <Loader className="animate-spin" /> : "Add New Expense"}

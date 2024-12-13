@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { PenBox } from "lucide-react";
 import React, { useEffect, useState } from "react";
@@ -94,9 +93,9 @@ function EditBudget({ budgetInfo, refreshData }) {
                   <h2 className="text-black font-medium my-1">Budget Amount</h2>
                   <Input
                     type="number"
-                    defaultValue={budgetInfo?.amount}
+                    defaultValue={budgetInfo?.amount ? parseFloat(budgetInfo.amount).toFixed(2) : ''}
                     placeholder="e.g. 5000$"
-                    onChange={(e) => setAmount(e.target.value)}
+                    onChange={(e) => setAmount(parseFloat(e.target.value).toFixed(2))}
                   />
                 </div>
               </div>
