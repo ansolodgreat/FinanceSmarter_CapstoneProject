@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import SideNav from "./_components/SideNav";
 import DashboardHeader from "./_components/DashboardHeader";
 import { db } from "@/utils/dbConfig";
@@ -13,19 +13,12 @@ function DashboardLayout({ children }) {
   const { user } = useUser();
   const router = useRouter();
 
-  useEffect(() => {
-    // Check if the user is loaded and email address exists
-    if (user?.primaryEmailAddress?.emailAddress) {
-      checkUserBudgets();
-    } else {
-      console.log("User not found or email address missing");
-    }
-  }, [user]); // Re-run the effect whenever `user` changes
-
-  const checkUserBudgets = async () => {
-    // Check if email exists
+  /**
+   * Fetch and check budgets for the user.
+   * Memoized with useCallback to avoid unnecessary re-renders.
+   */
+  const checkUserBudgets = useCallback(async () => {
     const userEmail = user?.primaryEmailAddress?.emailAddress;
-    console.log("User Email:", userEmail);
 
     if (!userEmail) {
       console.error("User's email address is not available.");
@@ -34,26 +27,37 @@ function DashboardLayout({ children }) {
 
     try {
       // Fetch budgets for the user
-      let result = await db
+      const result = await db
         .select()
         .from(Budgets)
-        .where(eq(Budgets.createdBy, userEmail));  // Use email in query
+        .where(eq(Budgets.createdBy, userEmail));
 
-        result = result.map(budget => ({
-          ...budget, // Spread the existing properties
-          amount: Number(budget.amount) // Convert the amount to a number
-          }));
-        console.log("Budgets:", result);
+      const formattedResult = result.map((budget) => ({
+        ...budget,
+        amount: Number(budget.amount), // Ensure the amount is a number
+      }));
 
-      // If no budgets found, redirect to create new budgets page
-      if (result?.length === 0) {
+      console.log("Budgets:", formattedResult);
+
+      // Redirect if no budgets found
+      if (formattedResult.length === 0) {
         router.replace("/dashboard/budgets");
       }
     } catch (error) {
-      // Log detailed error message
       console.error("Error fetching budgets:", error.message || error);
     }
-  };
+  }, [user?.primaryEmailAddress?.emailAddress, router]);
+
+  /**
+   * Effect to trigger budget checking when the user changes.
+   */
+  useEffect(() => {
+    if (user) {
+      checkUserBudgets();
+    } else {
+      console.log("User not found or email address missing");
+    }
+  }, [user, checkUserBudgets]);
 
   return (
     <div>

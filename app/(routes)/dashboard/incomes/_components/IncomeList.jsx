@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import CreateIncomes from "./CreateIncomes";
 import { db } from "@/utils/dbConfig";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
@@ -10,32 +10,46 @@ import IncomeItem from "./IncomeItem";
 function IncomeList() {
   const [incomelist, setIncomelist] = useState([]);
   const { user } = useUser();
-  useEffect(() => {
-    user && getIncomelist();
-  }, [user]);
 
-  const getIncomelist = async () => {
-    const result = await db
-      .select({
-        ...getTableColumns(Incomes),
-        totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
-        totalItem: sql`count(${Expenses.id})`.mapWith(Number),
-      })
-      .from(Incomes)
-      .leftJoin(Expenses, eq(Incomes.id, Expenses.budgetId))
-      .where(eq(Incomes.createdBy, user?.primaryEmailAddress?.emailAddress))
-      .groupBy(Incomes.id)
-      .orderBy(desc(Incomes.id));
-    setIncomelist(result);
-  };
+  /**
+   * Fetch the income list with totals.
+   * Memoized with useCallback to stabilize the function reference.
+   */
+  const getIncomelist = useCallback(async () => {
+    if (!user) return; // Prevent execution if user is not defined
+
+    try {
+      const result = await db
+        .select({
+          ...getTableColumns(Incomes),
+          totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
+          totalItem: sql`count(${Expenses.id})`.mapWith(Number),
+        })
+        .from(Incomes)
+        .leftJoin(Expenses, eq(Incomes.id, Expenses.budgetId))
+        .where(eq(Incomes.createdBy, user?.primaryEmailAddress?.emailAddress))
+        .groupBy(Incomes.id)
+        .orderBy(desc(Incomes.id));
+
+      setIncomelist(result);
+    } catch (error) {
+      console.error("Error fetching incomes:", error);
+    }
+  }, [user?.primaryEmailAddress?.emailAddress]); // Depend only on stable user email
+
+  /**
+   * Trigger income list fetch when `user` changes.
+   */
+  useEffect(() => {
+    if (user) {
+      getIncomelist();
+    }
+  }, [user, getIncomelist]);
 
   return (
     <div className="mt-7">
-      <div
-        className="grid grid-cols-1
-        md:grid-cols-2 lg:grid-cols-3 gap-5"
-      >
-        <CreateIncomes refreshData={() => getIncomelist()} />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <CreateIncomes refreshData={getIncomelist} />
         {incomelist?.length > 0
           ? incomelist.map((budget, index) => (
               <IncomeItem budget={budget} key={index} />
@@ -43,8 +57,7 @@ function IncomeList() {
           : [1, 2, 3, 4, 5].map((item, index) => (
               <div
                 key={index}
-                className="w-full bg-slate-200 rounded-lg
-        h-[150px] animate-pulse"
+                className="w-full bg-slate-200 rounded-lg h-[150px] animate-pulse"
               ></div>
             ))}
       </div>

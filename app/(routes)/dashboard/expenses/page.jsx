@@ -13,8 +13,11 @@ function ExpensesScreen() {
 
   /**
    * Used to get all expenses belonging to the user
+   * Memoized with useCallback to avoid re-renders
    */
   const getAllExpenses = useCallback(async () => {
+    if (!user) return; // Prevent fetching if user is not defined
+
     try {
       const result = await db
         .select({
@@ -38,13 +41,16 @@ function ExpensesScreen() {
     } catch (error) {
       console.error("Error fetching expenses:", error);
     }
-  }, [user]);
+  }, [user?.primaryEmailAddress.emailAddress]); // Only include stable dependencies
 
+  /**
+   * Trigger getAllExpenses when user changes
+   */
   useEffect(() => {
     if (user) {
       getAllExpenses();
     }
-  }, [user, getAllExpenses]); // Include `getAllExpenses` in the dependency array
+  }, [user, getAllExpenses]); // Both `user` and `getAllExpenses` are dependencies
 
   return (
     <div className="p-10">
