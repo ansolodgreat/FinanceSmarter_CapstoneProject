@@ -20,7 +20,7 @@ function DashboardLayout({ children }) {
     } else {
       console.log("User not found or email address missing");
     }
-  }, [user,checkUserBudgets]); // Re-run the effect whenever `user` changes
+  }, [user]); // Re-run the effect whenever `user` changes
 
   const checkUserBudgets = async () => {
     // Check if email exists

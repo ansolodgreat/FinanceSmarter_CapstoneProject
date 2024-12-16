@@ -3,7 +3,7 @@
 import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
 import { desc, eq } from "drizzle-orm";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import ExpenseListTable from "./_components/ExpenseListTable";
 import { useUser } from "@clerk/nextjs";
 
@@ -11,16 +11,12 @@ function ExpensesScreen() {
   const [expensesList, setExpensesList] = useState([]);
   const { user } = useUser();
 
-  useEffect(() => {
-    if (user) {
-      getAllExpenses();
-    }
-  }, [user]);
-
   /**
-   * Used to get all expenses belonging to the user
+   * Memoized function to fetch all expenses
    */
-  const getAllExpenses = async () => {
+  const getAllExpenses = useCallback(async () => {
+    if (!user) return;
+
     try {
       const result = await db
         .select({
@@ -44,7 +40,14 @@ function ExpensesScreen() {
     } catch (error) {
       console.error("Error fetching expenses:", error);
     }
-  };
+  }, [user]);
+
+  /**
+   * Fetch expenses when the user changes
+   */
+  useEffect(() => {
+    getAllExpenses();
+  }, [getAllExpenses]);
 
   return (
     <div className="p-10">
