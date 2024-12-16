@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/sonner.jsx";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "My Finance App",
+  title: "Finance Smarter",
   description: "Track your budgets and expenses effortlessly.",
 };
 

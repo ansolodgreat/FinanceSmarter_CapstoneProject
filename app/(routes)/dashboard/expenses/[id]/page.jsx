@@ -4,7 +4,7 @@ import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, use } from "react";
 import BudgetItem from "../../budgets/_components/BudgetItem";
 import AddExpense from "../_components/AddExpense";
 import ExpenseListTable from "../_components/ExpenseListTable";
@@ -30,7 +30,10 @@ function ExpensesScreen({ params }) {
   const [budgetInfo, setBudgetInfo] = useState();
   const [expensesList, setExpensesList] = useState([]);
   const route = useRouter();
-  const budgetId = params?.id; // Directly use params.id
+
+  // Unwrap params
+  const unwrappedParams = use(params);
+  const budgetId = unwrappedParams?.id;
 
   // Memoized function to fetch budget information
   const getBudgetInfo = useCallback(async () => {
