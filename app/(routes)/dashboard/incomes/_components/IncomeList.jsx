@@ -35,7 +35,7 @@ function IncomeList() {
     } catch (error) {
       console.error("Error fetching incomes:", error);
     }
-  }, [user?.primaryEmailAddress?.emailAddress]); // Depend only on stable user email
+  }, [user]); // Include the entire user object as a dependency
 
   /**
    * Trigger income list fetch when `user` changes.

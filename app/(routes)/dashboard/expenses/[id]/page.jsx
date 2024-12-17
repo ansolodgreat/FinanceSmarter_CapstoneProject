@@ -35,6 +35,20 @@ function ExpensesScreen({ params }) {
   const unwrappedParams = use(params);
   const budgetId = unwrappedParams?.id;
 
+  // Memoized function to fetch expenses
+  const getExpensesList = useCallback(async () => {
+    try {
+      const result = await db
+        .select()
+        .from(Expenses)
+        .where(eq(Expenses.budgetId, budgetId))
+        .orderBy(desc(Expenses.id));
+      setExpensesList(result);
+    } catch (error) {
+      console.error("Error fetching expenses:", error);
+    }
+  }, [budgetId]);
+
   // Memoized function to fetch budget information
   const getBudgetInfo = useCallback(async () => {
     try {
@@ -55,21 +69,7 @@ function ExpensesScreen({ params }) {
     } catch (error) {
       console.error("Error fetching budget info:", error);
     }
-  }, [user, budgetId]);
-
-  // Memoized function to fetch expenses
-  const getExpensesList = useCallback(async () => {
-    try {
-      const result = await db
-        .select()
-        .from(Expenses)
-        .where(eq(Expenses.budgetId, budgetId))
-        .orderBy(desc(Expenses.id));
-      setExpensesList(result);
-    } catch (error) {
-      console.error("Error fetching expenses:", error);
-    }
-  }, [budgetId]);
+  }, [user, budgetId, getExpensesList]); // Added getExpensesList
 
   // Fetch budget information when user or budgetId changes
   useEffect(() => {

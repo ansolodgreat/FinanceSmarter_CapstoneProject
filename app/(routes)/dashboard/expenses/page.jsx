@@ -28,7 +28,7 @@ function ExpensesScreen() {
         })
         .from(Budgets)
         .rightJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
-        .where(eq(Budgets.createdBy, user?.primaryEmailAddress.emailAddress))
+        .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
         .orderBy(desc(Expenses.id));
 
       // Ensure all `createdAt` values are valid Date objects
@@ -41,7 +41,7 @@ function ExpensesScreen() {
     } catch (error) {
       console.error("Error fetching expenses:", error);
     }
-  }, [user?.primaryEmailAddress.emailAddress]); // Only include stable dependencies
+  }, [user]); // Include the full user object in the dependency array
 
   /**
    * Trigger getAllExpenses when user changes
