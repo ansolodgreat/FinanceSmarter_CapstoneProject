@@ -18,33 +18,6 @@ function Dashboard() {
   const [expensesList, setExpensesList] = useState([]);
 
   /**
-   * Fetch the budget list with totals.
-   */
-  const getBudgetList = useCallback(async () => {
-    if (!user) return; // Prevent execution if user is undefined
-
-    try {
-      const result = await db
-        .select({
-          ...getTableColumns(Budgets),
-          totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
-          totalItem: sql`count(${Expenses.id})`.mapWith(Number),
-        })
-        .from(Budgets)
-        .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
-        .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
-        .groupBy(Budgets.id)
-        .orderBy(desc(Budgets.id));
-
-      setBudgetList(result);
-      getAllExpenses();
-      getIncomeList();
-    } catch (error) {
-      console.error("Error fetching budget list:", error);
-    }
-  }, [user]); // Include `user` in dependencies
-
-  /**
    * Fetch all expenses belonging to the user.
    */
   const getAllExpenses = useCallback(async () => {
@@ -67,7 +40,7 @@ function Dashboard() {
     } catch (error) {
       console.error("Error fetching expenses:", error);
     }
-  }, [user]);
+  }, [user]); // Include `user` in dependencies
 
   /**
    * Fetch the income stream list.
@@ -91,13 +64,48 @@ function Dashboard() {
   }, []);
 
   /**
-   * Trigger fetching budgets when `user` changes.
+   * Fetch the budget list with totals.
+   */
+  const getBudgetList = useCallback(async () => {
+    if (!user) return; // Prevent execution if user is undefined
+
+    try {
+      const result = await db
+        .select({
+          ...getTableColumns(Budgets),
+          totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
+          totalItem: sql`count(${Expenses.id})`.mapWith(Number),
+        })
+        .from(Budgets)
+        .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
+        .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
+        .groupBy(Budgets.id)
+        .orderBy(desc(Budgets.id));
+
+      setBudgetList(result);
+    } catch (error) {
+      console.error("Error fetching budget list:", error);
+    }
+  }, [user]); // Include `user` in dependencies
+
+  /**
+   * Fetch all data when `user` changes.
+   */
+  const fetchAllData = useCallback(async () => {
+    if (!user) return;
+    try {
+      await Promise.all([getBudgetList(), getAllExpenses(), getIncomeList()]);
+    } catch (error) {
+      console.error("Error fetching all data:", error);
+    }
+  }, [user, getBudgetList, getAllExpenses, getIncomeList]);
+
+  /**
+   * Trigger fetching data when `user` changes.
    */
   useEffect(() => {
-    if (user) {
-      getBudgetList();
-    }
-  }, [user, getBudgetList]); // Include `getBudgetList` in dependencies
+    fetchAllData();
+  }, [fetchAllData]);
 
   return (
     <div className="p-8">
@@ -114,7 +122,7 @@ function Dashboard() {
 
           <ExpenseListTable
             expensesList={expensesList}
-            refreshData={getBudgetList}
+            refreshData={fetchAllData}
           />
         </div>
         <div className="grid gap-5">
