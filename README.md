@@ -4,6 +4,11 @@ Built with the latest Next.js and TypeScript, Finan Smart is an advanced AI fina
 
 If you're getting started and need assistance or face any bugs, join our active Discord community. It's a place where people help each other out.
 
+
+## <a name="how-to-open">⚙️ How to Open?</a>
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
 ## <a name="tech-stack">Frontend</a>
@@ -77,8 +82,6 @@ Replace the placeholder values with your actual OpenAI credentials. You can obta
 ```bash
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
 ## <a name="snippets">🕸️ Assets & Code</a>
 
