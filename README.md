@@ -4,6 +4,9 @@ Built with the latest Next.js and TypeScript, Finan Smart is an advanced AI fina
 
 If you're getting started and need assistance or face any bugs, join our active Discord community. It's a place where people help each other out.
 
+## <a name="site-url">🕸️ This site is live at:</a>
+
+https://ansolodgreat.github.io/FinanceSmarter_CapstoneProject/
 
 ## <a name="how-to-open">⚙️ How to Open?</a>
 
